@@ -1,17 +1,17 @@
 # Razer Blade Stealth late 2019 macOS 10.15 Hackintosh
 
-**Note: I'AM NOT RESPONSIBLE IF YOU MESS UP YOUR COMPUTER USING THIS GUIDE!**
+**Note: I AM NOT RESPONSIBLE IF YOU MESS UP YOUR COMPUTER USING THIS GUIDE!**
 
 SUPPORT
 ---
-**I by no means an expert and would welcome advise on how to improve. I'm open for any cooperation and will try maintain this repository as much as possible. Please fill free to create Pull Requests.**
+**I am by no means an expert and would welcome advice on how to improve. I'm open for any cooperation and will try maintain this repository as much as possible. Please fill free to create Pull Requests.**
 
 Intro
 ---
 
 ![About this Mac](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh/raw/master/images/About_Mac.png)
 
-I have been using Apple hardware and software since the mid 90's and it's has been the best OS to meet my needs. I've had an MBP (15", 2017) for the last few years but for various reasons, have not been 100% happy. I've Hackintoshed a few PC laptops in the early days, borne mainly out of my love of Linux and my most resent success was with a Razer Blade Advanced 2019 using the excellent (https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh) StoneEvil guide. Whilst an excellent machine, it's just a tad too big for my needs, so decided to go the Stealth route. The following catalogues my pains to get this to the same level as my old Blade 15 Advanced.
+I have been using Apple hardware and software since the mid 90's and it's has been the best OS to meet my needs. I've had an MBP (15", 2017) for the last few years but for various reasons, have not been 100% happy. I've Hackintoshed a few PC laptops in the early days, borne mainly out of my love of Linux and my most resent success was with a Razer Blade Advanced 2019 using the excellent [StoneEvil](https://github.com/stonevil/Razer_Blade_Advanced_early_2019_Hackintosh) guide. Whilst an excellent machine, it's just a tad too big for my needs, so decided to go the Stealth route. The following catalogues my pains to get this to the same level as my old Blade 15 Advanced.
 
 **Purpose**
 
@@ -45,7 +45,7 @@ Hardware
 | ``Keyboard`` | Keyboard with Razer Chroma™ single-zone full key backlighting | Yes |
 | ``Touchpad`` | Precision Glass | No |
 
-**Full Official Spec list here : [Razer] (https://support.razer.com/gaming-laptops/razer-blade-stealth-13-late-2019-gtx-model/)**
+**Full Official Spec list here : [Razer](https://support.razer.com/gaming-laptops/razer-blade-stealth-13-late-2019-gtx-model/)**
 
 
 Hardware Upgrades and Tools
@@ -57,7 +57,7 @@ The bundled ``WiFI`` and ``NVMe`` is not compatible with macOS and should be rep
 **Accessories**
 
 | Accessories | Description |
-| ---: | :--- | :--- |
+| ---: | :--- |
 | ``USB mouse`` | Trackpad will be unavailable during macOS installation procedure |
 | ``USB storage`` with at least 16Gb storage | Installation USB media | 
 
