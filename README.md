@@ -64,10 +64,10 @@ The bundled ``WiFI`` and ``NVMe`` is not compatible with macOS and should be rep
 
 **WiFi**
 
-| WiFi module | Description | eBay or AliExpress URL | Confirmation |
-| ---: | :--- | :--- | :--- |
-| ``BCM94352Z (DW-1560)`` | Recommended. 2 antennas. No issues. Additional kext's are required. Easily to find for \$24-60 on | [eBay](https://www.ebay.com/sch/i.html?_from=R40&_nkw=BCM94352Z+DW-1560&_sacat=0&rt=nc&LH_BIN=1) | [community](https://osxlatitude.com/forums/topic/11138-inventory-of-supportedunsupported-wireless-cards-2-sierra-catalina/) |
-| ``BCM943602BAED (DW-1830)`` | 3 antennas. RBA have only 2. Works out of the box. About \$60-120 on AliExpress | [AliExpress](https://www.aliexpress.com/wholesale?catId=0&initiative_id=SB_20190707194727&SearchText=BCM943602BAED+DW1830&switch_new_app=y) | [community](https://osxlatitude.com/forums/topic/11138-inventory-of-supportedunsupported-wireless-cards-2-sierra-catalina/) |
+| WiFi module | Description |
+| ---: | :--- |
+| ``BCM94352Z (DW-1560)`` | Recommended. 2 antennas. No issues. Additional kext's are required. Easily to find for \$24-60 on |
+| ``BCM943602BAED (DW-1830)`` | 3 antennas. RBA have only 2. Works out of the box. |
 
 Repository
 ---
@@ -76,3 +76,27 @@ Repository
 ``OC`` directory. This is my current working 'OC' directory within my EFI directory.
 
 ``img`` directory. Images use in this ReadMe and also screenshots that support ACPI alterations. 
+
+
+Method
+---
+* Create the install media
+* Collect and compile the ACPI files
+* Collect the kext's needed
+* create the config.plist
+* Install OSX
+* Copy the EFI onto your bootable drive
+* Post Install setups
+
+
+**Create the install media**
+
+So, I'm lucky enough to have a Mac already, so these instructions are based on this fact.
+
+I followed the instructions detailed [here](https://dortania.github.io/vanilla-laptop-guide/preparations/offline-installer.html) and downloaded the installer files using [gibMacOS](https://github.com/corpnewt/gibMacOS) and creating the packages. Prep your USB drive and create the Installer USB using the 'createInstallmedia' command.
+
+`sudo /path/to/installer-app/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyNewlyFormattedUSB`
+
+After creation, copy the OpenCore EFI files over. I followed [this](https://dortania.github.io/vanilla-laptop-guide/preparations/opencore-efi.html) guide. The result can be found in the [`OC`](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/tree/master/OC) folder of this repo.
+
+
