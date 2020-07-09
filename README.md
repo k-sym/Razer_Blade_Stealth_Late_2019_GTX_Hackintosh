@@ -106,3 +106,11 @@ Folowing on from the install media, the ACPI files were next. Using the guide, w
 ![ACPI Table](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-table.jpg)
 
 
+First up, CPU power management.
+
+![ACPI Table](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-cpu.jpg)
+
+The Blade Stealth (according to Device Manager in Windows) has the ACPI path of `_SB.PR00` (up to 07) so we can remove all but this reference in the SSDT-PLUG.dsl and then compile.
+
+
+
