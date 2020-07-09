@@ -169,6 +169,15 @@ On to the Trackpad. This was a challenge on my last Blade (the 15" Advence 2019 
 
 Following [this guide](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html) 
 
+First, by looking at the STATUS method, I can see the Blade has only one condition, `GPHD`.
+
+![ACPI GPI0](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-gpi0.jpg)
+
+We want is for this to always return `0x0F` when booting macOS, so we want to make an SSDT that will return `GPHD == Zero`.
+
+After making the amendments to the `SSDT-GPI0.dsl` this is compiled and added to the ACPI folder and the `config.plist`.
+
+
 
 
 
