@@ -128,7 +128,7 @@ As shown in the DSDT dump from the Blade:
 
 ![EC Edge Case](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-ec-edge.jpg)
 
-So we don't actually need a `SSDT-EC.aml`, but as the Blade is a newer than SkyLake, we still need the `SSDT-USBX.aml` for USBX.
+So although the EC is OK, we still need to create a fake EC for OSX to use as it looks for the path `EC` in the ACPI table. Also, as the Blade is a newer than SkyLake, we will need the `SSDT-USBX.aml` for USBX.
 
 **Backlight**
 
@@ -140,8 +140,25 @@ Back to Windows Device Manager, we find the ACPI path name for the device:
 
 So, as we're CoffeeLake or newer, we need the `SSDT-PNLF-CFL.dsl` for our start. This file by default, this uses PCI0.GFX0 for the pathing. So we don't need to do anything. Just compile and move to the next :)
 
+We cannot properly test this until the issues with the IceLake chipset have been resolved, but it's good to have the ACPI patches in place.
 
+**Backlight**
 
+On to the Trackpad. This was a challenge on my last Blade (the 15" Advence 2019 model) and needed GPIO pinning to work successfully. However, I've not managed to get this working yet. I will, however, go through the process of what I have done so far.
+
+Following [this guide](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html) 
+
+**System Clocks**
+
+According the system DSDT for the Blade, the AWAC clock can be disabled with STAS:
+
+![ACPI AWAC](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-awac.jpg)
+
+and enable the RTC
+
+![ACPI RTC](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-rtc.jpg)
+
+So all we need to do is grab the default `SSDT-AWAC.dsl` and compile.
 
 
 
