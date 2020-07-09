@@ -99,18 +99,48 @@ I followed the instructions detailed [here](https://dortania.github.io/vanilla-l
 
 After creation, copy the OpenCore EFI files over. I followed [this](https://dortania.github.io/vanilla-laptop-guide/preparations/opencore-efi.html) guide. The result can be found in the [`OC`](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/tree/master/OC) folder of this repo.
 
-**ACPI files**
+
+ACPI files
+---
 
 Folowing on from the install media, the ACPI files were next. Using the guide, we see that we need these SSDT's.
 
 ![ACPI Table](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-table.jpg)
 
 
+**CPU**
+
 First up, CPU power management.
 
-![ACPI Table](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-cpu.jpg)
+![Device Manager CPU](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-cpu.jpg)
 
 The Blade Stealth (according to Device Manager in Windows) has the ACPI path of `_SB.PR00` (up to 07) so we can remove all but this reference in the SSDT-PLUG.dsl and then compile.
+
+**Embedded Controller**
+
+Next, the embedded controller.
+
+![Device Manager EC](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-ec.jpg)
+
+So, back in the Windows Device Manager, the EC is shown as `_SB.PCI0.LPCB.EC0`. However, this Blade DOES fall into an Edge case as outlined [here](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-methods/manual.html#pnp0c09-already-has-an-sta-method)
+
+As shown in the DSDT dump from the Blade:
+
+![EC Edge Case](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-ec-edge.jpg)
+
+So we don't actually need a `SSDT-EC.aml`, but as the Blade is a newer than SkyLake, we still need the `SSDT-USBX.aml` for USBX.
+
+**Backlight**
+
+Next, the backlight. I'll go through this process, however we know already that there are issues (currently) with the [Mobile Icelake](https://github.com/dortania/bugtracker/issues/17) chipset...
+
+Back to Windows Device Manager, we find the ACPI path name for the device:
+
+![EC Edge Case](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-backlight.jpg)
+
+
+
+
 
 
 
