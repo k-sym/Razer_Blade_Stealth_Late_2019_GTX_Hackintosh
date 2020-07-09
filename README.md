@@ -99,4 +99,10 @@ I followed the instructions detailed [here](https://dortania.github.io/vanilla-l
 
 After creation, copy the OpenCore EFI files over. I followed [this](https://dortania.github.io/vanilla-laptop-guide/preparations/opencore-efi.html) guide. The result can be found in the [`OC`](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/tree/master/OC) folder of this repo.
 
+**ACPI files**
+
+Folowing on from the install media, the ACPI files were next. Using the guide, we see that we need these SSDT's.
+
+![ACPI Table](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-table.jpg)
+
 
