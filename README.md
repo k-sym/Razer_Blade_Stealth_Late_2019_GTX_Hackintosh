@@ -138,6 +138,12 @@ Back to Windows Device Manager, we find the ACPI path name for the device:
 
 ![EC Edge Case](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-backlight.jpg)
 
+So, as we're CoffeeLake or newer, we need the `SSDT-PNLF-CFL.dsl` for our start. This file by default, this uses PCI0.GFX0 for the pathing. So we don't need to do anything. Just compile and move to the next :)
+
+
+
+
+
 
 
 
