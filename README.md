@@ -165,7 +165,7 @@ So all we need to do is grab the `SSDT-RHUB.dsl` and alter the path from the fil
 
 **Trackpad**
 
-On to the Trackpad. This was a challenge on my last Blade (the 15" Advence 2019 model) and needed GPIO pinning to work successfully. However, I've not managed to get this working yet. I will, however, go through the process of what I have done so far.
+This was a challenge on my last Blade (the 15" Advanced 2019 model) and needed GPIO pinning to work successfully. However, I've not managed to get this working yet. I will, however, go through the process of what I have done so far.
 
 Following [this guide](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html) 
 
@@ -176,6 +176,8 @@ First, by looking at the STATUS method, I can see the Blade has only one conditi
 We want is for this to always return `0x0F` when booting macOS, so we want to make an SSDT that will return `GPHD == Zero`.
 
 After making the amendments to the `SSDT-GPI0.dsl` this is compiled and added to the ACPI folder and the `config.plist`.
+
+BUT... This is not working. Someone suggested that it was to do with the IceLake addressing in [VoodooIC](https://github.com/VoodooI2C/VoodooI2C/commit/84b9aa673ee93c7ece9267559d2cf45cfe80804b) so I downloaded the repo including the latest changes that included the IceLake PCI addressing and compiled the kext. This still doesn't work :(
 
 
 
