@@ -142,12 +142,6 @@ So, as we're CoffeeLake or newer, we need the `SSDT-PNLF-CFL.dsl` for our start.
 
 We cannot properly test this until the issues with the IceLake chipset have been resolved, but it's good to have the ACPI patches in place.
 
-**Backlight**
-
-On to the Trackpad. This was a challenge on my last Blade (the 15" Advence 2019 model) and needed GPIO pinning to work successfully. However, I've not managed to get this working yet. I will, however, go through the process of what I have done so far.
-
-Following [this guide](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html) 
-
 **System Clocks**
 
 According the system DSDT for the Blade, the AWAC clock can be disabled with STAS:
@@ -160,9 +154,20 @@ and enable the RTC
 
 So all we need to do is grab the default `SSDT-AWAC.dsl` and compile.
 
+**USB Fixing**
+
+The ACPI path for RHUB on the Blade is `\_SB.PCI0.XHC.RHUB` as shown by the DSDT dump:
+
+![ACPI RHUB](https://github.com/ksymmonds/Razer_Blade_Stealth_Late_2019_GTX_Hackintosh/blob/master/img/acpi-rhub.jpg)
+
+So all we need to do is grab the `SSDT-RHUB.dsl` and alter the path from the file default of `SB_.PCI0.XHC1.RHUB` to the Blades `SB_.PCI0.XHC.RHUB`, save and complile.
 
 
+**Trackpad**
 
+On to the Trackpad. This was a challenge on my last Blade (the 15" Advence 2019 model) and needed GPIO pinning to work successfully. However, I've not managed to get this working yet. I will, however, go through the process of what I have done so far.
+
+Following [this guide](https://dortania.github.io/Getting-Started-With-ACPI/Laptops/trackpad-methods/manual.html) 
 
 
 
